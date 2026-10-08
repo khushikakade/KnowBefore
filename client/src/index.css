@@ -1,0 +1,387 @@
+/* ==========================================================================
+   KNOWBEFORE DESIGN SYSTEM TOKENS & FOUNDATIONS
+   Editorial Health Publication × Modern Consumer Product × Interactive Learning
+   ========================================================================== */
+
+:root {
+  /* Color Palette — Restrained, Human, Medically Trustworthy */
+  --bg-canvas: #FBF9F5;
+  --bg-surface: #FFFFFF;
+  --bg-subtle: #F4EFE6;
+  --bg-muted: #EBE4D8;
+  --bg-alt: #F0ECE3;
+
+  --text-primary: #151816;
+  --text-secondary: #4A524D;
+  --text-muted: #727B75;
+  --text-inverse: #FAF8F5;
+
+  --border-subtle: #E6E1D7;
+  --border-medium: #D3CCC0;
+  --border-strong: #9C9385;
+
+  /* Primary Brand — Deep Clinical Forest Pine */
+  --primary: #1D3D2F;
+  --primary-hover: #142B21;
+  --primary-light: #E7EFEA;
+  --primary-border: #BCD1C4;
+
+  /* Accent — Restrained Terracotta / Sienna */
+  --accent: #BA4B24;
+  --accent-hover: #9E3D1B;
+  --accent-light: #F9ECE6;
+  --accent-border: #E8BFB0;
+
+  /* Secondary Accents */
+  --ochre: #A67519;
+  --ochre-light: #FBF4E4;
+  --ochre-border: #E8D3A7;
+
+  --sage: #386B52;
+  --sage-light: #EBF3EE;
+
+  /* Status Colors */
+  --danger: #9E2A2B;
+  --danger-light: #FCECEB;
+  --danger-border: #E9B2B0;
+
+  --success: #236B43;
+  --success-light: #EAF4EE;
+  --success-border: #A7D3BA;
+
+  --warning: #B36200;
+  --warning-light: #FEF3E2;
+
+  --info: #2B5270;
+  --info-light: #EBF1F6;
+
+  /* Typography Stacks */
+  --font-serif: 'Newsreader', Georgia, Cambria, 'Times New Roman', serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', Menlo, Consolas, monospace;
+
+  /* Elevation & Shadows — Crisp, Tactile, Paper-like */
+  --shadow-subtle: 0 1px 2px rgba(21, 24, 22, 0.04);
+  --shadow-sm: 0 1px 3px rgba(21, 24, 22, 0.06), 0 1px 2px rgba(21, 24, 22, 0.03);
+  --shadow-md: 0 4px 12px rgba(21, 24, 22, 0.06), 0 1px 3px rgba(21, 24, 22, 0.04);
+  --shadow-lg: 0 12px 30px rgba(21, 24, 22, 0.08), 0 3px 8px rgba(21, 24, 22, 0.04);
+  --shadow-xl: 0 20px 48px rgba(21, 24, 22, 0.12);
+
+  /* Geometry & Radii */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-pill: 9999px;
+
+  /* Spacing */
+  --space-2xs: 4px;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+  --space-4xl: 96px;
+
+  /* Animation */
+  --ease-editorial: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: 150ms var(--ease-editorial);
+  --transition-base: 240ms var(--ease-editorial);
+  --transition-slow: 400ms var(--ease-editorial);
+
+  /* Container Max Width */
+  --container-max: 1280px;
+}
+
+/* Base Styles & Modern Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--bg-canvas);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Typography Hierarchy */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+}
+
+.serif-display {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+.editorial-kicker {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+}
+
+.mono-tag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+}
+
+/* Links & Buttons */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Layout Utilities */
+.app-container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+@media (max-width: 640px) {
+  .app-container {
+    padding: 0 var(--space-md);
+  }
+}
+
+/* Core Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  padding: 10px 18px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--text-inverse);
+  border: 1px solid var(--primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
+}
+
+.btn-secondary {
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  border: 1px solid var(--border-medium);
+}
+
+.btn-secondary:hover {
+  background-color: var(--bg-subtle);
+  border-color: var(--border-strong);
+}
+
+.btn-accent {
+  background-color: var(--accent);
+  color: var(--text-inverse);
+  border: 1px solid var(--accent);
+}
+
+.btn-accent:hover {
+  background-color: var(--accent-hover);
+}
+
+.btn-ghost {
+  background-color: transparent;
+  color: var(--text-secondary);
+  border: 1px solid transparent;
+}
+
+.btn-ghost:hover {
+  background-color: var(--bg-subtle);
+  color: var(--text-primary);
+}
+
+.btn-sm {
+  padding: 6px 12px;
+  font-size: 0.8125rem;
+}
+
+.btn-lg {
+  padding: 14px 24px;
+  font-size: 1.0625rem;
+}
+
+/* Editorial Cards */
+.editorial-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: var(--space-xl);
+  transition: border-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.editorial-card:hover {
+  border-color: var(--border-medium);
+}
+
+/* Hairline Dividers */
+.hairline {
+  border: 0;
+  height: 1px;
+  background-color: var(--border-subtle);
+  margin: var(--space-xl) 0;
+}
+
+/* Badge System */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border-radius: var(--radius-xs);
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.badge-pine {
+  background-color: var(--primary-light);
+  color: var(--primary);
+  border: 1px solid var(--primary-border);
+}
+
+.badge-sienna {
+  background-color: var(--accent-light);
+  color: var(--accent);
+  border: 1px solid var(--accent-border);
+}
+
+.badge-ochre {
+  background-color: var(--ochre-light);
+  color: var(--ochre);
+  border: 1px solid var(--ochre-border);
+}
+
+.badge-danger {
+  background-color: var(--danger-light);
+  color: var(--danger);
+  border: 1px solid var(--danger-border);
+}
+
+.badge-subtle {
+  background-color: var(--bg-subtle);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-subtle);
+}
+
+/* Medical Disclaimer Banner */
+.disclaimer-strip {
+  background-color: var(--bg-subtle);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 10px 0;
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+}
+
+.disclaimer-strip .disclaimer-inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  justify-content: center;
+  text-align: center;
+}
+
+/* Forms & Inputs */
+.input-field {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 0.9375rem;
+  font-family: inherit;
+  color: var(--text-primary);
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-sm);
+  outline: none;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.input-field:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(29, 61, 47, 0.12);
+}
+
+.input-field::placeholder {
+  color: var(--text-muted);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-canvas);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-medium);
+  border-radius: var(--radius-xs);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-strong);
+}
+
+/* Print Stylesheet for Doctor Discussion Sheet */
+@media print {
+  header, footer, .no-print, .btn, .disclaimer-strip {
+    display: none !important;
+  }
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 12pt;
+  }
+  .app-container {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .editorial-card {
+    border: 1px solid #ccc !important;
+    box-shadow: none !important;
+    page-break-inside: avoid;
+  }
+}
